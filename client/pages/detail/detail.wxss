@@ -1,0 +1,140 @@
+/* pages/detail/detail.wxss */
+.banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.playerLeft, .playerRight {
+  position: relative;
+  width: 45vw;
+  height: 9vh;
+  z-index: 1;
+  background: #30a8ea;
+}
+.playerScoreA{
+     position: absolute;
+    left: 180rpx; 
+    font-size: 50rpx;
+    color: #ffffff;
+    line-height: 9vh; 
+}
+.playerScoreB{
+     position: absolute;
+    left: 110rpx; 
+    font-size: 50rpx;
+    color: #ffffff;
+    line-height: 9vh; 
+}
+.modified1 {
+  position: absolute;
+  width: 13vw;
+  height: 9vh;
+  right: -60rpx;
+  background: #beedf5;
+  border-radius: 50%;
+}
+
+.modified2 {
+  position: absolute;
+  width: 13vw;
+  height: 9vh;
+  left: -60rpx;
+  background: #beedf5;
+  border-radius: 50%;
+}
+
+.playerBright {
+  background: #ec1961;
+}
+
+.time {
+  width: 13vw;
+  height: 7.8vh;
+  border: 0.7vh solid #fff;
+  border-radius: 50%;
+  background: #ff9800;
+  color: white;
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+  line-height: 13vw;
+  z-index: 10;
+}
+
+.avatarUrlA {
+  position: absolute;
+  width: 11vw;
+  height: 6vh;
+  border: 0.5vh #fff solid;
+  border-radius: 50%;
+  top: 1vh;
+  left: 3vw;
+}
+.avatarUrlB{
+  position: absolute;
+  width: 11vw;
+  height: 6vh;
+  border: 0.5vh #fff solid;
+  border-radius: 50%;
+  top: 1vh;
+  left: 28vw;
+}
+
+.question {
+  position: absolute;
+  width: 90vw;
+  height: 32vh;
+  left: 8vw;
+  top: 18vh;
+  color: white;
+  text-align: left;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.answer {
+  position: relative;
+  width: 90vw;
+  
+  left: 0vw;
+  top: 30vh;
+}
+
+.option {
+  width: 70vw;
+  height: 8vh;
+  margin: 20rpx auto;
+  background: white;
+  border-radius: 50rpx;
+  text-align: center;
+  line-height: 8vh;
+  font-size: 40rpx;
+  color: #3f51b5;
+  font-weight: bold;
+}
+
+.error {
+  background: #f4494f;
+  color: white;
+}
+
+.right{
+  background: #687efb;
+  color: white;
+}
+
+.game-result{
+    margin-top: 200rpx;
+    text-align: center;
+}
+.result-user{
+    margin: 100rpx 0;
+    font-size: 80rpx;
+}
+.back-to-index{
+    background: blue;
+    color: #ffffff;
+    marginTop: 200rpx;
+    font-size: 50rpx;
+}

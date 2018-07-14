@@ -1,0 +1,34 @@
+<text wx:if="{{!question&&!successUser}}">正在匹配……</text> 
+
+
+<view class='container'>
+    <view class='banner' fixed='true' wx:if='{{userInfo[0]}}'>
+        <view class='playerLeft'>
+            <image class='avatarUrlA' src='{{userInfo[0].avatarUrl}}'></image>
+            <text class='playerScoreA'>{{userInfo[0].score}}</text>
+            <view class='modified1'></view>
+        </view>
+        <view class='time'>{{answerTime}}</view>
+        <view class='playerRight'>
+            <image class='avatarUrlB' src='{{userInfo[1].avatarUrl}}'></image>
+            <text class='playerScoreB'>{{userInfo[1].score}}</text>
+            <view class='modified2'></view>
+        </view>
+    </view>
+    <view class='question' wx:if="{{question}}">问题：{{question}}</view>
+    <view class='answer'>
+        <block  wx:for="{{options}}" wx:key="{{index}}">
+            <view class='{{item.optionClass}}' catchtap='onanswerTap' data-option="{{item.option}}" data-index="{{index}}">{{item.option}}</view>
+        </block>
+    </view>
+
+    <view wx:if='{{successUser}}' class='game-result'>
+        <view>
+            <text>答题结果:</text>
+        </view>
+         <view class='result-user'>
+            <text>{{successUser}}</text>
+        </view>
+        <navigator url='/pages/index/index' open-type="redirect" class="back-to-index " >继续挑战</navigator>
+    </view>
+</view>
