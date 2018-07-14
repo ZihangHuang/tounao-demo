@@ -3,23 +3,12 @@ var models = require('../model/model')
 var userDB = require('../mongo/userDB')
 
 //创建房间
-function createRoom(waitClients, questionSetId, socket){
+function createRoom(roomUsers, questionSetId, socket){
 
     return new Promise((resolve, reject) => {
-        var roomUsers = []
-
-        //把队列前两个client拿出来
-        roomUsers = waitClients.splice(0, 2)
 
         //为存进mongodb设置的变量
         var userInfo = []
-
-        //第一个进入房间的用户已退出，则把其重放回队列
-        if(!roomUsers[0].connected){
-            waitClients.push(roomUsers[1])
-            // console.log('waitClients:', waitClients)
-            return
-        }
 
         roomUsers.forEach(function(item, index){
             var current = {}
@@ -51,6 +40,9 @@ function createRoom(waitClients, questionSetId, socket){
             //把两个用户带进房间
             roomUsers.forEach(function(item, index){
                 console.log('user的id：', item.id)
+
+                item.roomId = doc.id
+                
                 item.join(doc.id, function(){
                     console.log("房间:",item.rooms)
                 })
@@ -176,6 +168,8 @@ function saveGameUserDetail(openId, roomId, answerDetail){
             console.log(err)
         }
         console.log('save detail:', doc)
+
+        answerDetail = null
     })
 }
 

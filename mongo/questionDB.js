@@ -30,5 +30,6 @@ function getQuestion(questionSetId){
 }
 
 module.exports = {
-	getQuestion: getQuestion(questionSetId)
+	getQuestion: getQuestion(questionSetId),
+	createQuestion: createQuestion
 }
