@@ -28,8 +28,7 @@ const questions = mongoose.Schema({
 	option1: String,
 	option2: String,
 	option3: String,
-	option4: String,
-	score: Number
+	option4: String
 })
 
 const questionSet = mongoose.Schema({
@@ -41,9 +40,16 @@ const onlineUser = mongoose.Schema({
 	openId: String,
 	socketId: String
 })
+
+const manager = mongoose.Schema({
+	username: String,
+	password: String
+})
+
 module.exports = {
 	roomList: mongoose.model('roomList', roomList),
 	userInfo: mongoose.model('userInfo', userInfo),
 	onlineUser: mongoose.model('onlineUser', onlineUser),
-	questions: mongoose.model('questions', questions)
+	questions: mongoose.model('questions', questions),
+	manager: mongoose.model('manager', manager)
 }

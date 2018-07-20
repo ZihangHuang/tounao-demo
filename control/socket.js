@@ -37,7 +37,7 @@ async function createRoom(roomUsers, socket, io){
     try {
 
         //获取问题
-        var questionList = await questionDB.getQuestion
+        var questionList = await questionDB.getQuestion(4)
 
         var questionSetId = questionList[0]['questionSetId']
 

@@ -1,0 +1,70 @@
+extends layout
+
+block content
+
+    .container-fluid
+      .col-md-2.col-sm-0.col-xs-0
+      .col-md-8.col-sm-12.col-xs-12
+        .question-wrap
+          .panel.panel-default
+            .panel-heading
+              h3 问题集
+            .panel-body
+              table.table
+                caption 
+                  p 1:数学，2:物理，3：语文，4:化学，5:历史，6:地理，7:生物，8：常识，9:其他
+                  p(style='color: red') 注意：请至少保留四条问题！
+                thead
+                  tr
+                    th 问题集
+                    th 题目
+                    th 答案
+                    th 选项1
+                    th 选项2
+                    th 选项3
+                    th 选项4
+                    th 操作
+                tbody
+                  -for(var i = 0; i < AllQuestion.length; i++)
+                    tr(data-id='#{AllQuestion[i].questionId}')
+                      td #{AllQuestion[i].questionSetId}
+                      td #{AllQuestion[i].question}
+                      td #{AllQuestion[i].answer}
+                      td #{AllQuestion[i].option1}
+                      td #{AllQuestion[i].option2}
+                      td #{AllQuestion[i].option3}
+                      td #{AllQuestion[i].option4}
+                      td
+                        a(href='?act=delete&id=#{AllQuestion[i].questionId}', onclick="return confirm('确认删除？')") 删除
+              table.table
+                caption 添加
+                thead
+                  tr
+                    th 问题集
+                    th 题目
+                    th 答案
+                    th 选项1
+                    th 选项2
+                    th 选项3
+                    th 选项4
+                    th 操作
+                tbody
+                  form(method="POST" action='/admin/add')
+                    tr
+                      td
+                        input.add-ques(type='text' name='questionSetId')
+                      td 
+                        input.add-ques(type='text' name='question')
+                      td 
+                        input.add-ques(type='text' name='answer')
+                      td 
+                        input.add-ques(type='text' name='option1')
+                      td 
+                        input.add-ques(type='text' name='option2')
+                      td 
+                        input.add-ques(type='text' name='option3')
+                      td 
+                        input.add-ques(type='text' name='option4')
+                      td
+                        input.add-ques(type='submit' value='添加')
+      .col-md-2.col-sm-0.col-xs-0

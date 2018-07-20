@@ -10,7 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "express-static": "^1.2.5",
+    "jade": "^1.11.0",
     "mongoose": "^5.1.5",
     "redis": "^2.8.0",
     "request": "^2.87.0",

@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active{ text-decoration: none !important;
+}
+ul,li{
+    list-style: none;
+}
+.clearfloat{
+	zoom:1;
+}
+.clearfloat:after{
+	display:block;
+	clear:both;
+	content:"";
+	visibility:hidden;
+	height:0;
+}
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+
+.question-wrap{
+	/*text-align: center;*/
+}
+.add-ques{
+  width: 70px;
+}

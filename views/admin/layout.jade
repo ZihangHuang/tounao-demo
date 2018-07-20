@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/style.css')
+    script(src='/js/jquery-3.2.1.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/script.js')
+  body
+    -if(username)
+      h3 用户名：#{username}
+      a(href='/admin/logout') 退出登录
+    block content
